@@ -278,37 +278,65 @@ h2 {
   background-color: #f8f0e5;
 }
 
-/* === STRUKTUR KELAS – FOTO KECIL === */
+/* ==========================
+   STRUKTUR KELAS (LAYOUT BARU)
+========================== */
 
-.struct-card img,
-.struktur-card img,
-.ketua-card img,
-.wakil-card img,
-.sekretaris-card img,
-.bendahara-card img {
-  width: 120px;       /* ukuran foto kecil */
-  height: 120px;      /* biar kotak & seragam */
-  object-fit: cover;  /* tidak melebar */
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto 10px;
-}
-
-/* Grid struktur kelas */
-.struktur-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+.struktur-container {
+  width: 100%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.struct-card,
-.struktur-card {
+/* BARIS 1 – Wali kelas */
+.struktur-row-1 {
+  display: flex;
+  justify-content: center;
+}
+
+.struktur-row-1 .struct-card {
+  width: 280px;
+}
+
+/* BARIS 2 – Ketua & Wakil */
+.struktur-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* BARIS 3 – Sekretaris + Bendahara (4 orang) */
+.struktur-row-3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* BARIS 4 – Kebersihan & Kekeluargaan */
+.struktur-row-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* KARTU STRUKTUR */
+.struct-card {
   background: #fff;
-  padding: 15px;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+/* FOTO KECIL */
+.struct-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 
@@ -454,3 +482,4 @@ footer {
   letter-spacing: 0.5px;
   font-family: "Playfair Display", serif;
 }
+

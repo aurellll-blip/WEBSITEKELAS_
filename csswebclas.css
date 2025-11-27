@@ -339,6 +339,101 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* ==== STRUKTUR KELAS – GRID BARU BERTINGKAT ==== */
+
+.struktur-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==== KOTAK STRUKTUR ==== */
+.struktur-card {
+  background: #fffaf3;
+  border-radius: 18px;
+  padding: 15px;
+  text-align: center;
+  width: 170px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.struktur-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 17px rgba(0,0,0,0.22);
+}
+
+/* ==== FOTO KECIL (SEPERTI ANGGOTA) ==== */
+.struktur-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+/* ==== TEKS ==== */
+.struktur-card .jabatan {
+  font-weight: 600;
+  color: #6b4a3a;
+  margin-bottom: 3px;
+  font-size: 15px;
+}
+
+.struktur-card .nama {
+  font-size: 14px;
+  color: #5d4a3f;
+}
+
+/* ==== POSISI KHUSUS UNTUK URUTAN TINGKAT ==== */
+
+/* Wali kelas di tengah sendiri */
+.struktur-card:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+/* Ketua + Wakil */
+.struktur-card:nth-child(2),
+.struktur-card:nth-child(3) {
+  grid-column: span 1;
+}
+
+/* Sekretaris 1 & 2 */
+.struktur-card:nth-child(4),
+.struktur-card:nth-child(5) {
+  grid-column: span 1;
+}
+
+/* Bendahara 1 & 2 */
+.struktur-card:nth-child(6),
+.struktur-card:nth-child(7) {
+  grid-column: span 1;
+}
+
+/* Kebersihan & Kekeluargaan */
+.struktur-card:nth-child(8),
+.struktur-card:nth-child(9) {
+  grid-column: span 1;
+}
+
+/* Agar wali kelas di posisi tengah grid */
+.struktur-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 700px) {
+  .struktur-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .struktur-card:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+}
 
 /* ======= GALERI ELEGAN & AESTHETIC ======= */
 /* === GALERI COKLAT LUCU AESTHETIC === */
@@ -482,4 +577,5 @@ footer {
   letter-spacing: 0.5px;
   font-family: "Playfair Display", serif;
 }
+
 

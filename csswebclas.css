@@ -14,29 +14,43 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==== HEADER ==== */
+/* ==== HEADER HERO FOTO ==== */
 header {
-  background: linear-gradient(135deg, #d4b89f, #b89c8a, #e8d7c5);
-  color: #fffaf3;
-  padding: 70px 20px;
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: url("foto/kelas-bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #fff;
   border-bottom: 4px solid #a88a73;
-  box-shadow: 0 4px 12px rgba(80, 60, 50, 0.3);
-  backdrop-filter: blur(6px);
 }
 
-header h1 {
-  font-size: 3.2em;
-  letter-spacing: 1.5px;
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+header .hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+header .hero-text h1 {
+  font-size: 3em;
   text-transform: uppercase;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.45);
 }
 
-header p {
-  font-style: italic;
+header .hero-text p {
+  margin-top: 10px;
   font-size: 1.2em;
-  color: #f9f5ef;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
 }
 
 /* ==== NAVBAR ==== */
@@ -79,7 +93,7 @@ nav a:hover {
 
 /* ==== HERO ==== */
 .hero {
-  background: url('foto/kelas-bg.jpg') center/cover no-repeat;
+  background: url('foto/.jpeg') center/cover no-repeat;
   height: 380px;
   display: flex;
   align-items: center;
@@ -577,5 +591,6 @@ footer {
   letter-spacing: 0.5px;
   font-family: "Playfair Display", serif;
 }
+
 
 
